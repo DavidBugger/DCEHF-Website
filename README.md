@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DVCEHF - Displaced and Vulnerable Children Educational and Humanitarian Foundation
 
-## Getting Started
+DVCEHF is a professional humanitarian platform built with Next.js 15+, dedicated to supporting internally displaced persons (IDPs) and vulnerable children in Nigeria. The foundation focuses on providing emergency shelter, food assistance, healthcare, and educational opportunities to restore hope and dignity to conflict-affected communities.
 
-First, run the development server:
+![DVCEHF Logo](/public/images/logo.jpg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Key Features
+
+- **Modern & Responsive Design**: A high-performance web interface optimized for all devices.
+- **Humanitarian Impact Tracking**: Real-time project status and fundraising progress for various initiatives.
+- **Success Stories**: Authentic, high-quality visual narratives of beneficiaries supported by the foundation.
+- **Interactive Gallery**: A comprehensive photo and video gallery showcasing field work across multiple states (Borno, Zamfara, Plateau, etc.).
+- **Donation Integration**: Streamlined pathways for supporters to contribute to specific humanitarian causes.
+- **SEO Optimized**: Fully configured metadata and semantic HTML for maximum visibility.
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Fonts**: [Next/Font](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) (Inter)
+- **Deployment**: Optimized for Vercel
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DavidBugger/DCEHF-Website.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📂 Project Structure
+
+```text
+├── app/               # Next.js App Router (pages and layouts)
+├── components/        # Reusable UI components (Hero, Stats, etc.)
+├── public/            # Static assets (images, videos, icons)
+│   └── images/        # Authentic field photos and branding
+├── next.config.ts     # Next.js configuration
+├── tailwind.config.ts # Tailwind CSS configuration
+└── globals.css        # Global styles and Tailwind directives
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌍 Impact Areas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Emergency Shelter**: Providing temporary housing for displaced families.
+- **Food Security**: Monthly food parcel distributions in IDP camps.
+- **Education**: Accelerated learning programmes and vocational training for women.
+- **Healthcare**: Mobile medical clinics serving remote conflict-affected areas.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 License
 
-## Learn More
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**DVCEHF** — *Restoring hopes, Protecting futures.*
