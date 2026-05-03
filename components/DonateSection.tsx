@@ -1,6 +1,11 @@
+"use client";
+import { useState } from "react";
 import { Heart, Shield, Eye, FileCheck } from "lucide-react";
+import DonateModal from "./DonateModal";
 
 export default function DonateSection() {
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
+
   return (
     <section
       className="relative py-20 overflow-hidden"
@@ -60,16 +65,24 @@ export default function DonateSection() {
 
           {/* Right CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-white text-[#1E3A5F] hover:bg-gray-100 font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 text-[15px] transition-colors min-w-[180px]">
+            <button
+              onClick={() => setIsDonateOpen(true)}
+              className="bg-white text-[#1E3A5F] hover:bg-gray-100 font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 text-[15px] transition-colors min-w-[180px] cursor-pointer"
+            >
               <Heart size={18} className="text-red-500" fill="#ef4444" />
               Donate Now
             </button>
-            <button className="bg-transparent border-2 border-white/50 hover:border-white text-white font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 text-[15px] transition-all hover:bg-white/10 min-w-[180px]">
+            <button
+              onClick={() => setIsDonateOpen(true)}
+              className="bg-transparent border-2 border-white/50 hover:border-white text-white font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 text-[15px] transition-all hover:bg-white/10 min-w-[180px] cursor-pointer"
+            >
               Sponsor a Family
             </button>
           </div>
         </div>
       </div>
+      <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
     </section>
   );
 }
+

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Heart, Menu, X } from "lucide-react";
+import DonateModal from "./DonateModal";
 
 const links = [
   { label: "Home", href: "/" },
@@ -15,6 +16,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a2e] text-white shadow-lg">
@@ -44,10 +46,13 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex">
-          <Link href="/donate" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-[13px] px-5 py-2.5 rounded-md flex items-center gap-2 transition-colors">
+          <button
+            onClick={() => setIsDonateOpen(true)}
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-[13px] px-5 py-2.5 rounded-md flex items-center gap-2 transition-colors cursor-pointer"
+          >
             <Heart size={14} fill="white" />
             Donate Now
-          </Link>
+          </button>
         </div>
 
         <button className="lg:hidden" onClick={() => setOpen(!open)}>
@@ -62,11 +67,18 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <Link href="/donate" onClick={() => setOpen(false)} className="bg-orange-500 text-white font-bold text-sm px-5 py-2.5 rounded-md mt-2 text-center">
+          <button
+            onClick={() => {
+              setOpen(false);
+              setIsDonateOpen(true);
+            }}
+            className="bg-orange-500 text-white font-bold text-sm px-5 py-2.5 rounded-md mt-2 text-center w-full"
+          >
             Donate Now
-          </Link>
+          </button>
         </div>
       )}
+      <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
     </nav>
   );
 }

@@ -1,4 +1,5 @@
 import DonateSection from "@/components/DonateSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const stories = [
   {
@@ -46,31 +47,33 @@ export default function StoriesPage() {
         </div>
       </div>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
-            <p className="text-gray-500 text-[15px] max-w-xl mx-auto">
-              Behind every statistic is a real person with a story. Here are some of the lives your support has helped transform.
-            </p>
-          </div>
+      <ScrollReveal>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-14">
+              <p className="text-gray-500 text-[15px] max-w-xl mx-auto">
+                Behind every statistic is a real person with a story. Here are some of the lives your support has helped transform.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            {stories.map((s, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden flex flex-col sm:flex-row shadow-sm hover:shadow-md transition-shadow">
-                <img src={s.img} alt={s.name} className="w-full sm:w-44 h-52 sm:h-auto object-cover flex-shrink-0" />
-                <div className="p-6">
-                  <span className={`text-xs font-bold px-2 py-1 rounded ${s.tagColor} mb-3 inline-block`}>{s.tag}</span>
-                  <h3 className="font-extrabold text-gray-900 text-[16px] mb-2">{s.name}</h3>
-                  <blockquote className="text-[#1E3A5F] font-semibold text-[13.5px] italic leading-relaxed mb-3 border-l-2 border-orange-400 pl-3">
-                    "{s.quote}"
-                  </blockquote>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{s.story}</p>
+            <div className="grid md:grid-cols-2 gap-10">
+              {stories.map((s, i) => (
+                <div key={i} className="bg-gray-50 rounded-2xl overflow-hidden flex flex-col sm:flex-row shadow-sm hover:shadow-md transition-shadow">
+                  <img src={s.img} alt={s.name} className="w-full sm:w-44 h-52 sm:h-auto object-cover flex-shrink-0" />
+                  <div className="p-6">
+                    <span className={`text-xs font-bold px-2 py-1 rounded ${s.tagColor} mb-3 inline-block`}>{s.tag}</span>
+                    <h3 className="font-extrabold text-gray-900 text-[16px] mb-2">{s.name}</h3>
+                    <blockquote className="text-[#1E3A5F] font-semibold text-[13.5px] italic leading-relaxed mb-3 border-l-2 border-orange-400 pl-3">
+                      "{s.quote}"
+                    </blockquote>
+                    <p className="text-gray-500 text-[13px] leading-relaxed">{s.story}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       <DonateSection />
     </>

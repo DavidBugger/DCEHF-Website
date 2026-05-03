@@ -58,15 +58,15 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-orange-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-[13px]">12 Relief Avenue, Abuja, FCT, Nigeria</span>
+                <span className="text-gray-400 text-[13px]">Bokkos, Plateau State, Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-orange-400 flex-shrink-0" />
-                <a href="mailto:info@hopedignity.org" className="text-gray-400 hover:text-orange-400 text-[13px] transition-colors">info@hopedignity.org</a>
+                <a href="mailto:info@dvcehf.org" className="text-gray-400 hover:text-orange-400 text-[13px] transition-colors">info@dvcehf.org</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-orange-400 flex-shrink-0" />
-                <a href="tel:+2348000000000" className="text-gray-400 hover:text-orange-400 text-[13px] transition-colors">+234 800 000 0000</a>
+                <a href="tel:+2348063234755" className="text-gray-400 hover:text-orange-400 text-[13px] transition-colors">+234 806 323 4755</a>
               </li>
             </ul>
           </div>
@@ -77,7 +77,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-500 text-[12px]">
-            © {new Date().getFullYear()} Hope & Dignity NGO. All rights reserved.
+            © {new Date().getFullYear()} DVCEHF NGO. All rights reserved.
           </p>
           <div className="flex gap-5">
             {["Privacy Policy", "Terms of Service", "Donation Policy"].map((l) => (

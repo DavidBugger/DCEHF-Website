@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import DonateSection from "@/components/DonateSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const projects = [
   { img: "/images/2026-04-29-3.42.12pm.jpeg", cat: "Shelter", catColor: "text-blue-600", tag: "bg-blue-50 text-blue-700", title: "Plateau State Emergency Shelter Drive", desc: "Providing 400 temporary shelters to families displaced by recent flooding in Plateau State.", progress: 72, raised: "₦8.6M", goal: "₦12M" },
@@ -21,35 +22,37 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {projects.map((p, i) => (
-              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded ${p.tag} mb-3 inline-block`}>{p.cat}</span>
-                  <h3 className="font-bold text-gray-900 text-[15px] mb-2 leading-snug">{p.title}</h3>
-                  <p className="text-gray-500 text-[13px] leading-relaxed mb-4">{p.desc}</p>
-                  <div className="mb-3">
-                    <div className="flex justify-between text-xs text-gray-500 mb-1">
-                      <span>Raised: <strong className="text-gray-800">{p.raised}</strong></span>
-                      <span>Goal: {p.goal}</span>
+      <ScrollReveal>
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+              {projects.map((p, i) => (
+                <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <img src={p.img} alt={p.title} className="w-full h-48 object-cover" />
+                  <div className="p-6">
+                    <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded ${p.tag} mb-3 inline-block`}>{p.cat}</span>
+                    <h3 className="font-bold text-gray-900 text-[15px] mb-2 leading-snug">{p.title}</h3>
+                    <p className="text-gray-500 text-[13px] leading-relaxed mb-4">{p.desc}</p>
+                    <div className="mb-3">
+                      <div className="flex justify-between text-xs text-gray-500 mb-1">
+                        <span>Raised: <strong className="text-gray-800">{p.raised}</strong></span>
+                        <span>Goal: {p.goal}</span>
+                      </div>
+                      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full bg-orange-500 rounded-full" style={{ width: `${p.progress}%` }} />
+                      </div>
+                      <div className="text-right text-xs text-orange-500 font-semibold mt-1">{p.progress}%</div>
                     </div>
-                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-orange-500 rounded-full" style={{ width: `${p.progress}%` }} />
-                    </div>
-                    <div className="text-right text-xs text-orange-500 font-semibold mt-1">{p.progress}%</div>
+                    <a href="#" className={`${p.catColor} font-semibold text-[13px] flex items-center gap-1 hover:gap-2 transition-all`}>
+                      View Project <ArrowRight size={14} />
+                    </a>
                   </div>
-                  <a href="#" className={`${p.catColor} font-semibold text-[13px] flex items-center gap-1 hover:gap-2 transition-all`}>
-                    View Project <ArrowRight size={14} />
-                  </a>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       <DonateSection />
     </>

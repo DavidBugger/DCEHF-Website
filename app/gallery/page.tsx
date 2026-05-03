@@ -2,6 +2,7 @@
 import { useState } from "react";
 import DonateSection from "@/components/DonateSection";
 import { X } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const categories = ["All", "Shelter", "Food", "Education", "Healthcare", "Community"];
 
@@ -33,46 +34,48 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-3 mb-10">
-            {categories.map(c => (
-              <button
-                key={c}
-                onClick={() => setActive(c)}
-                className={`px-5 py-2 rounded-full text-[13px] font-semibold transition-all border ${active === c
-                    ? "bg-orange-500 border-orange-500 text-white"
-                    : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-500"
-                  }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+      <ScrollReveal>
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            {/* Filter tabs */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {categories.map(c => (
+                <button
+                  key={c}
+                  onClick={() => setActive(c)}
+                  className={`px-5 py-2 rounded-full text-[13px] font-semibold transition-all border ${active === c
+                      ? "bg-orange-500 border-orange-500 text-white"
+                      : "border-gray-200 text-gray-600 hover:border-orange-300 hover:text-orange-500"
+                    }`}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
 
-          {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((p, i) => (
-              <div
-                key={i}
-                className="relative group rounded-xl overflow-hidden shadow-sm cursor-pointer"
-                onClick={() => setLightbox(p)}
-              >
-                <img src={p.src} alt={p.caption} className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end">
-                  <p className="text-white text-[12.5px] font-medium px-4 py-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    {p.caption}
-                  </p>
+            {/* Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map((p, i) => (
+                <div
+                  key={i}
+                  className="relative group rounded-xl overflow-hidden shadow-sm cursor-pointer"
+                  onClick={() => setLightbox(p)}
+                >
+                  <img src={p.src} alt={p.caption} className="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end">
+                    <p className="text-white text-[12.5px] font-medium px-4 py-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      {p.caption}
+                    </p>
+                  </div>
+                  <span className="absolute top-3 left-3 bg-white/90 text-gray-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                    {p.cat}
+                  </span>
                 </div>
-                <span className="absolute top-3 left-3 bg-white/90 text-gray-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
-                  {p.cat}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Lightbox */}
       {lightbox && (
