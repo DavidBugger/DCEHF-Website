@@ -1,9 +1,10 @@
 import { ArrowRight, Users, GraduationCap, Building2 } from "lucide-react";
+import Link from "next/link";
 
 const points = [
-  { icon: <Users size={22} className="text-blue-600" />, bg: "bg-blue-50", text: "Provide immediate relief and protection" },
-  { icon: <GraduationCap size={22} className="text-orange-500" />, bg: "bg-orange-50", text: "Empower through education and skills" },
-  { icon: <Building2 size={22} className="text-green-600" />, bg: "bg-green-50", text: "Rebuild communities for a better future" },
+  { icon: <Users size={22} className="text-blue-600" />, bg: "bg-blue-50", text: "Provide immediate relief and protection", linkColor: "text-blue-600" },
+  { icon: <GraduationCap size={22} className="text-orange-500" />, bg: "bg-orange-50", text: "Empower through education and skills", linkColor: "text-orange-600" },
+  { icon: <Building2 size={22} className="text-green-600" />, bg: "bg-green-50", text: "Rebuild communities for a better future", linkColor: "text-green-600" },
 ];
 
 export default function Mission() {
@@ -34,19 +35,24 @@ export default function Mission() {
 
             <div className="flex flex-col gap-4 mb-8">
               {points.map((p, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className={`w-11 h-11 rounded-full ${p.bg} flex items-center justify-center flex-shrink-0`}>
-                    {p.icon}
+                <div key={i} className="flex flex-col gap-2">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-11 h-11 rounded-full ${p.bg} flex items-center justify-center flex-shrink-0`}>
+                      {p.icon}
+                    </div>
+                    <span className="text-gray-700 font-medium text-[14px]">{p.text}</span>
                   </div>
-                  <span className="text-gray-700 font-medium text-[14px]">{p.text}</span>
+                  <Link href="/projects" className={`${p.linkColor} font-semibold text-[13px] flex items-center gap-1 hover:gap-2 transition-all ml-[56px]`}>
+                    View Project <ArrowRight size={14} />
+                  </Link>
                 </div>
               ))}
             </div>
 
-            <button className="bg-navy-700 bg-[#1E3A5F] hover:bg-[#152b47] text-white font-bold px-7 py-3.5 rounded-md flex items-center gap-2 text-[14px] transition-colors">
+            <Link href="/about" className="bg-navy-700 bg-[#1E3A5F] hover:bg-[#152b47] text-white font-bold px-7 py-3.5 rounded-md flex items-center gap-2 text-[14px] transition-colors inline-flex">
               Learn More About Us
               <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

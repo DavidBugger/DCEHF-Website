@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Heart, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import DonateModal from "./DonateModal";
 
@@ -66,14 +67,13 @@ export default function Hero() {
               <Heart size={16} fill="white" />
               Donate Now
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link
+              href="/about"
               className="bg-transparent border-2 border-white/60 hover:border-white text-white font-semibold px-7 py-3.5 rounded-md flex items-center gap-2 text-[15px] transition-all hover:bg-white/10"
             >
               Learn More
               <ArrowRight size={16} />
-            </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -1,4 +1,5 @@
 import { Home, UtensilsCrossed, GraduationCap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const programs = [
   {
@@ -59,9 +60,9 @@ export default function Programs() {
               <div className="p-5">
                 <h3 className="font-bold text-gray-900 text-[16px] mb-2">{p.title}</h3>
                 <p className="text-gray-500 text-[13.5px] leading-relaxed mb-4">{p.desc}</p>
-                <a href="#" className={`${p.linkColor} font-semibold text-[13px] flex items-center gap-1 hover:gap-2 transition-all`}>
+                <Link href="/projects" className={`${p.linkColor} font-semibold text-[13px] flex items-center gap-1 hover:gap-2 transition-all`}>
                   View Project <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -70,3 +71,4 @@ export default function Programs() {
     </section>
   );
 }
+
